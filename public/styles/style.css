@@ -44,8 +44,8 @@ h3 {
 }
 
 .Tile {
-  float: left;
-  /*position: relative;*/
+  margin-top: 0;
+  position: relative;
   border-style: dotted;
   border-radius: 5px;
   border-color: darkcyan;
@@ -55,29 +55,15 @@ h3 {
   overflow-y: hidden;
 }
 
-.YoutubeTile {
-  float: left;
-  /*position: relative;*/
+.GiantBombTile {
+  margin-top: 0;
+  position: relative;
   border-style: dotted;
   border-radius: 5px;
-  border-color: darkcyan;
+  border-color: lightblue;
   padding: 25px;
-  margin: 2%;
-  height: 75vh;
-  width: 45%;
-  overflow-y: hidden;
-}
-
-.RedditTile {
-  float: left;
-  /*position: relative;*/
-  border-style: dotted;
-  border-radius: 5px;
-  border-color: darkcyan;
-  padding: 25px;
-  margin: 2%;
-  height: 75vh;
-  width: 45%;
+  margin: 3%;
+  height: 250px;
   overflow-y: hidden;
 }
 

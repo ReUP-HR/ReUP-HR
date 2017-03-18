@@ -19,7 +19,7 @@ class GiantBombTile extends Component {
 
   render() {
     return (
-      <div className="Tile">
+      <div className="GiantBombTile">
         <GiantBombInfo game={ this.state.gameInfo } images={ this.state.gameImages } />
       </div>
     );
