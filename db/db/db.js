@@ -1,7 +1,7 @@
 var Sequelize = require('sequelize');
 var db = new Sequelize('reup', 'root', '', {
-      dialect: "mysql", // or 'sqlite', 'postgres', 'mariadb'
-    });
+  dialect: 'mysql', // or 'sqlite', 'postgres', 'mariadb'
+});
 
 db.authenticate()
   .then(function(err) {
@@ -15,7 +15,7 @@ var User = db.define('User', {
   username: Sequelize.STRING,
   password: Sequelize.STRING
 }, { instanceMethods: {
-    comparePassword: function(attemptedPassword, savedPassword, callback) {
+  comparePassword: function(attemptedPassword, savedPassword, callback) {
       bcrypt.compare(attemptedPassword, savedPassword, function(err, isMatch) {
         if (err) {
           return callback(err, null);
@@ -23,7 +23,7 @@ var User = db.define('User', {
         callback(null, isMatch);
       });
     }
-  }
+}
 });
 
 module.exports = function(sequelize, DataTypes) {

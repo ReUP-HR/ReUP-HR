@@ -2,7 +2,6 @@ import axios from 'axios';
 import React from 'react';
 import keys from '../../config/keys.js';
 
-// var game = 'overwatch'
 
 const options = {
   headers: {
@@ -17,7 +16,6 @@ const fetchTwitch = function(tile, gameName) {
       tile.setState({
         streams: response.data.streams
       });
-      console.log('Twitch stream state has been set to:', tile.state.streams);
     }).catch((error) => {
       console.error('ERROR GETTING A RESPONSE FROM fetchTwitch:', error);
     });

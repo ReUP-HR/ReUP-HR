@@ -6,7 +6,6 @@ import React from 'react';
 const getReddit = function (tile, subReddit) {
   axios.get(`https://www.reddit.com/r/${subReddit}/top/.json?sort=top&t=day`)
     .then((response) => {
-      console.log('REDDIT: ', response.data.data.children);
       tile.setState({
         posts: tile.state.posts.concat(response.data.data.children)
       });

@@ -4,6 +4,7 @@ import YoutubeTile from '../components/Youtube/YoutubeTile.jsx';
 import RedditTile from '../components/Reddit/RedditTile.jsx';
 import TwitterTile from '../components/Twitter/TwitterTile.jsx';
 import TwitchTile from '../components/Twitch/TwitchTile.jsx';
+import Metacritic from '../components/Metacritic/metacritic.jsx';
 
 let Feed = (props) => (
   <div className="mainView pre-scrollable">
@@ -17,6 +18,8 @@ let Feed = (props) => (
       <YoutubeTile game={props.game}/>
 
       <TwitchTile twitchQuery={props.game.twitchQuery}/>
+
+      {/* <Metacritic game={props.game}/> */}
     
     
   </div>

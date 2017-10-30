@@ -12,8 +12,8 @@ const fetchYoutube = (tile, channelId) => {
     })
     .catch((err) => {
       console.log(`Error in fetching youtube data: ${err}`);
-    })
-}
+    });
+};
 
 export default fetchYoutube;
 

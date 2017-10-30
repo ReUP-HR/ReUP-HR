@@ -14,6 +14,7 @@ class AddGame extends React.Component {
       twitchQuery: '',
       youtubeChannelId: '',
       twitterName: '',
+      metacriticName: '',
     };
 
     this.handleGameNameChange = this.handleGameNameChange.bind(this);
@@ -24,6 +25,7 @@ class AddGame extends React.Component {
     this.handleTwitterNameChange = this.handleTwitterNameChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.redirectToPage = this.redirectToPage.bind(this);
+    this.handleMetacriticChange = this.handleMetacriticChange.bind(this);
   }
 
   handleGameNameChange(event) {
@@ -42,6 +44,10 @@ class AddGame extends React.Component {
     this.setState({twitchQuery: event.target.value});
   }
 
+  handleMetacriticChange(event) {
+    this.setState({metacriticName: event.target.value});
+  }
+
   handleYoutubeChannelIdChange(event) {
     this.setState({youtubeChannelId: event.target.value});
   }
@@ -56,10 +62,8 @@ class AddGame extends React.Component {
   }
 
   redirectToPage(response) {
-    if(response.status === 200) {
+    if (response.status === 200) {
       console.log('Called redirectToPage successfully with status of 200:', response.data[0].gameName);
-      // window.location.href = `/#/${response.data[0].gameName}`;
-      // window.location.href = '/#/explore';
     } else {
       console.log('Server did not respond back with status code 200:', response.status);
     }
@@ -100,7 +104,10 @@ class AddGame extends React.Component {
             <label>Twitter Handle</label><input type="text" className="form-control" value={this.state.twitterName} onChange={this.handleTwitterNameChange} placeholder="i.e. PlayOverwatch"/>
             <span><em>i.e. 'PlayOverwatch' in https://twitter.com/<strong>PlayOverwatch</strong>/</em></span>
           </div>
-          <div className="form-group"></div>
+          <div className="form-group">
+            <label>Metacritic Name</label><input type="text" className="form-control" value={this.state.metacriticName} onChange={this.handleMetacriticChange} placeholder="i.e. overwatch" aria-describedby=""/>
+            <span><em>Please type the Metacritic search url for the game here; . i.e. '<strong>overwatch</strong>'</em></span>
+          </div>
           <div className="form-group">
             <input type="submit" className="btn btn-primary" value="Submit Game" />
           </div>

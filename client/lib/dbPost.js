@@ -19,6 +19,6 @@ const dbPost = function (context, gameName, giantBombName, subRedditName, twitch
   }).catch((err) => {
     console.log('Error adding game to database via dbPost:', err);
   });
-}
+};
 
 export default dbPost;

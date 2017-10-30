@@ -16,7 +16,6 @@ class RedditTile extends React.Component {
 
   componentDidMount () {
     Reddit.getReddit(this, this.props.subRedditName);
-    // console.dir(this.state.posts);
   }
 
   render () {
